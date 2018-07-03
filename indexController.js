@@ -2,7 +2,7 @@ const idb=window.indexedDB;
 
     if('serviceWorker' in navigator) {
   navigator.serviceWorker
-           .register('/sw.js')
+           .register('./sw.js')
            .then((reg) =>{ console.log("Service Worker Registered at " ,reg.scope); }).catch((err)=>{
              console.log("registration failed",err);
            });
