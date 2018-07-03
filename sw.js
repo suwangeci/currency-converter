@@ -9,10 +9,10 @@ self.addEventListener('install',function(event) {
   event.waitUntil(
     caches.open(staticCacheName).then(function(cache){
       return cache.addAll([
-        '/favicon.ico',
-        '/static/css/main.c17080f1.css',
-        '/static/js/main.09c92ebb.js',
-        'index.html'
+        './favicon.ico',
+        './static/css/main.c17080f1.css',
+        './static/js/main.09c92ebb.js',
+        '/index.html'
         
    
       ]);
@@ -39,8 +39,8 @@ self.addEventListener('fetch',(event)=> {
   const requestUrl = new URL(event.request.url);
 
   if (requestUrl.origin === location.origin) {
-    if (requestUrl.pathname === '/'){
-      event.respondWith(caches.match('/index.html').then((response)=>{
+    if (requestUrl.pathname === './'){
+      event.respondWith(caches.match('./index.html').then((response)=>{
         return response;
       }))
     }
