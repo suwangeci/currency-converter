@@ -12,7 +12,7 @@ self.addEventListener('install',function(event) {
         './favicon.ico',
         './static/css/main.c17080f1.css',
         './static/js/main.09c92ebb.js',
-        '/index.html'
+        './index.html'
         
    
       ]);
@@ -40,7 +40,7 @@ self.addEventListener('fetch',(event)=> {
 
   if (requestUrl.origin === location.origin) {
     if (requestUrl.pathname === '/'){
-      event.respondWith(caches.match('/index.html').then((response)=>{
+      event.respondWith(caches.match('./index.html').then((response)=>{
         return response;
       }))
     }
